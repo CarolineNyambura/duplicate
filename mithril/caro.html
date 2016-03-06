@@ -1,0 +1,33 @@
+<html>
+<head>
+	<title>material</title>
+	<link href="materialize.min.css" rel="stylesheet"></link>
+	<script src="mithril.min.js"></script>
+</head>
+<body>
+<script>
+	var component={
+		view:function(){
+			return m("div",{class:"card-panel"},[
+				m("button",{class:"btn"},"take Over")]
+				)
+			}
+		}
+		var item={
+			view:function(){
+				return m("ul",[
+			m("li","item 1"),
+			m("li","item 2"),
+			m("li","item 3")
+			])
+			}
+		}
+		m("a",[
+			m("button","nested")
+			])
+		
+	//m.mount(document.body,component)
+	m.mount(document.body,item)
+	</script>
+</body>
+</html>
