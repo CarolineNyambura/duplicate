@@ -5,32 +5,39 @@
 	<script src="mithril.min.js"></script>
 </head>
 <body>
+	<!-- -----------------------------------------  -->
   <div id="component1Zone">
     <!-- component 1 goes here -->
-  </div>
 
+		<script>
+			var component1={
+				view:function(){
+					return m("div",{class:"card-panel"},[
+						m("button",{class:"btn"},"take Over")
+		      ])
+				}
+			}
+
+			m.mount(document.getElementById('component1Zone'),component1)
+		</script>
+  </div>
+	<!-- ----------------------------------------------- -->
   <div id="component2Zone">
     <!-- component 2 goes here -->
-  </div>
-<script>
-	var component1={
-		view:function(){
-			return m("div",{class:"card-panel"},[
-				m("button",{class:"btn"},"take Over")
-      ])
-		}
-	}
 
-  var component2 = {
-    view:function(){
-      return m("div",[
-        m("button",{class:"btn"},"i am aweosme"),
-        m(component1)
-      ])
-    }
-  }
-	m.mount(document.getElementById('component1Zone'),component1)
-	m.mount(document.getElementById('component2Zone'),component2)
-	</script>
+		<script>
+		var component2 = {
+	    view:function(){
+	      return m("div",[
+	        m("button",{class:"btn"},"i am aweosme"),
+	        m(component1)
+	      ])
+	    }
+	  }
+
+		m.mount(document.getElementById('component2Zone'),component2)
+		</script>
+  </div>
+
 </body>
 </html>

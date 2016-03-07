@@ -5,29 +5,46 @@
 	<script src="mithril.min.js"></script>
 </head>
 <body>
+	<div id="navbarZone"></div>
+	<div id="component1Zone"></div>
+	<div id="component2Zone"></div>
 <script>
-	var component={
-		view:function(){
-			return m("div",{class:"card-panel"},[
-				m("button",{class:"btn"},"take Over")]
-				)
-			}
-		}
-		var item={
+
+		var component1 = {
 			view:function(){
-				return m("ul",[
-			m("li","item 1"),
-			m("li","item 2"),
-			m("li","item 3")
-			])
+				return m("div",{class:"card-panel"},[
+					m("button",{class:"btn"},"breaking")
+				])
 			}
 		}
-		m("a",[
-			m("button","nested")
-			])
-		
-	//m.mount(document.body,component)
-	m.mount(document.body,item)
+
+		var component2 = {
+			view:function(){
+				return m("div",{class:"card-panel"},[
+					m("button",{class:"btn"},"awesome")
+				])
+			}
+		}
+
+		var navbar = {
+			view:function(){
+				return m("nav",{class:"nav-wrapper"},[
+					m("a",{class:"brand-logo"},"LOGO"),
+					m("ul",[
+
+						m("li",[
+							m("a","caro")
+						])
+					])
+				])
+			}
+		}
+
+	m.mount(document.getElementById('component1Zone'),component1)
+	m.mount(document.getElementById('component2Zone'),component2)
+	m.mount(document.getElementById('navbarZone'),navbar)
+	//m.mount(document.body,component2)
+
 	</script>
 </body>
 </html>
