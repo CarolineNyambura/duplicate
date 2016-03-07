@@ -1,0 +1,58 @@
+<html>
+<head>
+	<title>material</title>
+	<link href="materialize.min.css" rel="stylesheet"></link>
+	<script src="mithril.min.js"></script>
+</head>
+<body>
+  <div id="component1Zone">
+    <!-- component 1 goes here -->
+  </div>
+
+  <div id="component2Zone">
+    <!-- component 2 goes here -->
+  </div>
+<script>
+	var itemComponent = {
+		view:function(ctrl, attrs){
+			return m("li",{
+				onclick:function(){
+					alert("i am displaying " + attrs.text)
+				}
+			},[
+				m("a",attrs.text)
+			])
+		}
+	}
+
+	var component1={
+		view:function(){
+			return m("nav",{class:"nav-wrapper"},[
+				m("a",{class:"brand-logo"},"LOGO"),
+				m("ul",[
+
+					m(itemComponent,{
+						text:"caroline"
+					}),
+
+					m(itemComponent,{
+						text:"ted"
+					}),
+
+					m(itemComponent,{
+						text:"branie"
+					}),
+
+					m(itemComponent,{
+						text:"awesomeness"
+					}),
+
+				])
+      ])
+		}
+	}
+
+	m.mount(document.body,component1)
+	</script>
+</body>
+</html>
